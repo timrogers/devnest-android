@@ -25,6 +25,10 @@ familiar to developers today. jQTouch is a really great project and I would enco
 whether you want to create web applications or even native applications using...
 - [PhoneGap](http://github.com/sintaxi/phonegap) - this is used to convert the web application into a native Android application for publishing on the Android Market. This is a really brilliant project, in that it also supports other platforms such as iPhone, Palm WebOS and Blackberry. An iPhone version of this project is already [published on GitHub](http://github.com/timrogers/devnest-iphone).
 
+### What is the _resources directory for though?
+
+That directory just contains the screenshots that I've uploaded to the Android market. Nothing exciting, just thought it might be a good idea to include them in the spirit of openness!
+
 What should I do with this?
 ---------------------------
 
