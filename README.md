@@ -15,6 +15,10 @@ default information like:
 - tweets from the official DevNest account, @devnest
 - the agenda of the next event
 
+### What's new in version 1.0.1?
+
+This is just a quick update to mirror the version 1.0.1 for iPhone. I have changed the about screen slightly, and have fixed some problems with the @devnest and #devnest screens. I have added an alert to the #devnest screen explaining the lack of tweets, which is due to some problems that Twitter are having with their API. Version 1.1 is currently being planned, and you can view the plans in the readme of [devnest-iphone](http://www.github.com/timrogers/devnest-iphone).
+
 What resources are used in this project?
 ----------------------------------------
 

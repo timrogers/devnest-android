@@ -16,21 +16,21 @@
 	<script src="jqtouch/jqtouch.js" type="text/javascript" charset="utf-8"></script>
 	<script src="phonegap.js" type="text/javascript"></script>
 	<script type="text/javascript">
-	
+
 	function noInternet() {
 	$("div.info").show();
 	$("ul#links").hide();
 	$("ul#nextnest_backup").show();
 	}
-		
+
 		$(document).ready(function() {
-		
+
 
 var isiPad = navigator.userAgent.match(/iPad/i) != null;
 if (isiPad) {
 $('body > *').css({minHeight: '1004px !important'});
 } else {
-		
+
 		if (typeof(PhoneGap) != 'undefined') {
     $('body > *').css({minHeight: '460px !important'});
 }
@@ -39,30 +39,34 @@ $('body > *').css({minHeight: '1004px !important'});
 
 	$.get("http://lolzstudios-files.s3.amazonaws.com/devnest/nextnest.html", function(data, textstatus, xhr) {
 		$("#home div.toolbar").after(data);
-		
+
 	});
-	
-			$.getJSON('http://search.twitter.com/search.json?q=+from%3Adevnest&rpp=10', function(data) {
-			$.each(data.results, function(i, item) {
-				$("#atdevnest").append("<ul class='rounded'><li class='normal'>" + item.text + "</li></ul>")
+
+			$.getJSON('http://twitter.com/statuses/user_timeline/20364096.json', function(data) {
+			$.each(data, function(i, item) {
+				$("#atdevnest").append("<ul class='rounded'><li class='normal'>" + item.text + "</li></ul>");
 			});
 			});
-	
-			
+
+
 	$("div.agenda-list").load("http://lolzstudios-files.s3.amazonaws.com/devnest/agenda.html");
 		$.getJSON('http://search.twitter.com/search.json?q=%23devnest&rpp=10', function(data) {
 			$.each(data.results, function(i, item) {
 				$("#hashdevnest").append("<ul class='rounded'><li class='normal' style='font-weight: bold;'><img src='" + item.profile_image_url + "' class='icon' width='32' height='32' /></a>" + item.from_user + "</li><li class='normal'>" + item.text + "</li></ul>")
 			});
 			}); 
-	
 
-			
+	$("a.alert").tap(function() {
+		navigator.notification.alert("You may only see a very small number of tweets here due to ongoing problems with the Twitter API. This will hopefully be fixed in due course.", "#devnest", "OK");
+	});
+
+
+
 		});
-		
-	
+
+
 	</script>
-	
+
 	<link rel="stylesheet" type="text/css" href="jqtouch/jqtouch.min.css" />
 	<link rel="stylesheet" type="text/css" href="themes/apple/theme.min.css" />
 </head>
@@ -77,10 +81,10 @@ $('body > *').css({minHeight: '1004px !important'});
 		<li class="normal center">First Tuesday of every month at 6pm</li>
 		<li class="normal center">Guardian Media Group, Kings Place</li>
 	</ul>	
-		
+
 
 		<ul id="links">
-			<li class="normal arrow"><a href="#hashdevnest"><img src="twitter.png" class="icon" align="absmiddle" />#devnest</a></li>
+			<li class="normal arrow"><a href="#hashdevnest" class="alert"><img src="twitter.png" class="icon" align="absmiddle" />#devnest</a></li>
 			<li class="normal arrow"><a href="#atdevnest"><img src="twitter.png" class="icon" align="absmiddle" />@devnest</a></li>
 			<li class="normal arrow"><a id="sitelink" rel="external" href="http://www.twitterdevelopernest.com"><img src="Browser_safari.png" class="icon" valign="middle" />Twitter Developer Nest</a></li>
 		</ul>
@@ -92,15 +96,16 @@ $('body > *').css({minHeight: '1004px !important'});
 			<a class="button back blueButton" href="#home">Close</a>
 		</div>
 		<ul class="rounded">
-			<li class="normal title center">@devnest for iPhone</li>
+			<li class="normal title center">DevNest</li>
 			<li class="normal center arrow"><a href="http://www.tim-rogers.co.uk">by Tim Rogers</a></li>
 			<li class="normal center">With thanks to @nuxnix for all his help with the release of this application</li>
-			
+			<li class="normal center title arrow"><a href="http://www.github.com/timrogers/devnest-android">View the source code</a></li>
+
 		</ul>
 		<ul class="rounded">
 			<li class="arrow"><a href="#disclaimer" class="flip">Terms of Use</a></li>
 		</ul>
-		
+
 	</div>
 	<div id="disclaimer">
 	<div class="toolbar">
@@ -145,4 +150,3 @@ Your use of the Application is also subject to the terms and conditions of Apple
 	</script>
 </body>
 </html>
-	
