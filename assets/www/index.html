@@ -59,6 +59,11 @@ $('body > *').css({minHeight: '1004px !important'});
 	$("a.alert").tap(function() {
 		navigator.notification.alert("You may only see a very small number of tweets here due to ongoing problems with the Twitter API. This will hopefully be fixed in due course.", "#devnest", "OK");
 	});
+	
+	$("a.refresh").tap(function(e) {
+		e.preventDefault();
+		location.reload(true);
+	});
 
 
 
@@ -73,6 +78,7 @@ $('body > *').css({minHeight: '1004px !important'});
 <body>
 	<div id="home" class="current">
 		<div class="toolbar">
+			<a style="right: auto !important; left: 6px !important;" class="button blueButton refresh" href="#">Refresh</a>
 			<h1>@devnest</h1>
 			<a class="button slideup" href="#about">About</a>
 		</div>

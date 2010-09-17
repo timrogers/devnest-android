@@ -19,6 +19,10 @@ default information like:
 
 This is just a quick update to mirror the version 1.0.1 for iPhone. I have changed the about screen slightly, and have fixed some problems with the @devnest and #devnest screens. I have added an alert to the #devnest screen explaining the lack of tweets, which is due to some problems that Twitter are having with their API. Version 1.1 is currently being planned, and you can view the plans in the readme of [devnest-iphone](http://www.github.com/timrogers/devnest-iphone).
 
+### What's new in version 1.1?
+
+Added a refresh button to the taskbar to refresh the event details. This was necessary on iPhone as it did not update due to multi-tasking, not sure if it is needed here. Added regardless for parity.
+
 What resources are used in this project?
 ----------------------------------------
 
